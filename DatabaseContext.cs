@@ -22,8 +22,8 @@ namespace Online_platform_for_vegetables
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Farmer> Farmers { get; set; }
         public DbSet<Courier> Couriers { get; set; }
-        public DbSet<Vegetables> Vegetables { get; set;  }
-        public DbSet<VegetableStocks> VegetableStocks { get; set; }
+        public DbSet<Vegetable> Vegetables { get; set;  }
+        public DbSet<VegetableStock> VegetableStocks { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set;  }
         public DbSet<Delivery> Deliveries { get; set; }

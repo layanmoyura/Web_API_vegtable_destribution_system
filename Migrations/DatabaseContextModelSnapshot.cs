@@ -16,39 +16,128 @@ namespace Online_platform_for_vegetables.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.10")
+                .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Admin", b =>
                 {
-                    b.Property<int>("AdminID")
+                    b.Property<int>("AdminId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
                     b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NIC_No")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AdminID");
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Profile_Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AdminId");
 
                     b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Courier", b =>
                 {
-                    b.Property<string>("CourierID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("VehiclId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Vehicle_Photo")
@@ -57,25 +146,34 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Property<string>("Vehicle_reg_no")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("vehicle_contact_no")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CourierID");
+                    b.HasKey("VehiclId");
 
                     b.ToTable("Couriers");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Customer", b =>
                 {
-                    b.Property<int>("CustomerID")
+                    b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
                     b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
@@ -84,31 +182,67 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Property<string>("Living_City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NIC_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Profile_Photo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Profile_Picture")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CustomerID");
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Delivery", b =>
                 {
-                    b.Property<int>("DeliveryID")
+                    b.Property<int>("DeliveryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AdminID")
+                    b.Property<int>("AdminId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CourierID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("CourierVehiclId")
+                        .HasColumnType("int");
 
-                    b.Property<int?>("OrderID")
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VehiclId")
                         .HasColumnType("int");
 
                     b.Property<bool>("delivered_or_not")
@@ -120,23 +254,26 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Property<string>("to")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DeliveryID");
+                    b.HasKey("DeliveryId");
 
-                    b.HasIndex("AdminID");
+                    b.HasIndex("AdminId");
 
-                    b.HasIndex("CourierID");
+                    b.HasIndex("CourierVehiclId");
 
-                    b.HasIndex("OrderID");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Deliveries");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Farmer", b =>
                 {
-                    b.Property<int>("FarmerID")
+                    b.Property<int>("FarmerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
 
                     b.Property<string>("Account_no")
                         .HasColumnType("nvarchar(max)");
@@ -144,46 +281,88 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Property<string>("Bank")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Living_city")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NIC_No")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone_or_Email")
+                    b.Property<string>("NormalizedUserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Profile_Picture")
+                    b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Ratings")
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FarmerID");
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Profile_Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FarmerId");
 
                     b.ToTable("Farmers");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Order", b =>
                 {
-                    b.Property<int>("OrderID")
+                    b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CustomerID")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Deadline")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FarmerID")
+                    b.Property<int>("FarmerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VegetableStocksID")
+                    b.Property<bool>("Supplied_or_not")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("VegetableStocksId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VegetableStocksId1")
                         .HasColumnType("int");
 
                     b.Property<int>("progress")
@@ -192,20 +371,20 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Property<double>("required_amount_kg")
                         .HasColumnType("float");
 
-                    b.HasKey("OrderID");
+                    b.HasKey("OrderId");
 
-                    b.HasIndex("CustomerID");
+                    b.HasIndex("CustomerId");
 
-                    b.HasIndex("FarmerID");
+                    b.HasIndex("FarmerId");
 
-                    b.HasIndex("VegetableStocksID");
+                    b.HasIndex("VegetableStocksId1");
 
                     b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Payment", b =>
                 {
-                    b.Property<int>("PaymentID")
+                    b.Property<int>("PaymentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -219,105 +398,106 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Property<string>("Card_type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CustomerID")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("FarmerID")
+                    b.Property<int>("FarmerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Farmers_acc_no")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OrderID")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.HasKey("PaymentID");
+                    b.HasKey("PaymentId");
 
-                    b.HasIndex("CustomerID");
+                    b.HasIndex("CustomerId");
 
-                    b.HasIndex("FarmerID");
+                    b.HasIndex("FarmerId");
 
-                    b.HasIndex("OrderID");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("Online_platform_for_vegetables.Model.VegetableStocks", b =>
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Vegetable", b =>
                 {
-                    b.Property<int>("VegetableStocksID")
+                    b.Property<int>("VegetablesId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Amount_kg")
-                        .HasColumnType("float");
-
-                    b.Property<int?>("FarmerID")
+                    b.Property<int>("AdminId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Farmers_price_per_kg_Rs")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("Updated_Time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("VegetablesID")
-                        .HasColumnType("int");
-
-                    b.HasKey("VegetableStocksID");
-
-                    b.HasIndex("FarmerID");
-
-                    b.HasIndex("VegetablesID");
-
-                    b.ToTable("VegetableStocks");
-                });
-
-            modelBuilder.Entity("Online_platform_for_vegetables.Model.Vegetables", b =>
-                {
-                    b.Property<int>("VegetablesID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Max_control_price_Rs")
+                    b.Property<double>("Max_control_price_country")
                         .HasColumnType("float");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Updated_AdminAdminID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Updated_time")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Vegtable_image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("VegetablesID");
+                    b.HasKey("VegetablesId");
 
-                    b.HasIndex("Updated_AdminAdminID");
+                    b.HasIndex("AdminId");
 
                     b.ToTable("Vegetables");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.VegetableStock", b =>
+                {
+                    b.Property<int>("VegetableStocksId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<int>("FarmerId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Farmers_price_per_kg")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("Updated_Time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VegetablesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("VegetableStocksId");
+
+                    b.HasIndex("FarmerId");
+
+                    b.HasIndex("VegetablesId");
+
+                    b.ToTable("VegetableStocks");
                 });
 
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Delivery", b =>
                 {
                     b.HasOne("Online_platform_for_vegetables.Model.Admin", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminID");
+                        .WithMany("Deliveries")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Online_platform_for_vegetables.Model.Courier", "Courier")
-                        .WithMany()
-                        .HasForeignKey("CourierID");
+                        .WithMany("Deliveries")
+                        .HasForeignKey("CourierVehiclId");
 
                     b.HasOne("Online_platform_for_vegetables.Model.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderID");
+                        .WithMany("Deliveries")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Admin");
 
@@ -329,16 +509,20 @@ namespace Online_platform_for_vegetables.Migrations
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Order", b =>
                 {
                     b.HasOne("Online_platform_for_vegetables.Model.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerID");
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Online_platform_for_vegetables.Model.Farmer", "Farmer")
-                        .WithMany()
-                        .HasForeignKey("FarmerID");
+                        .WithMany("Orders")
+                        .HasForeignKey("FarmerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Online_platform_for_vegetables.Model.VegetableStocks", "vegetableStock")
-                        .WithMany()
-                        .HasForeignKey("VegetableStocksID");
+                    b.HasOne("Online_platform_for_vegetables.Model.VegetableStock", "vegetableStock")
+                        .WithMany("Orders")
+                        .HasForeignKey("VegetableStocksId1");
 
                     b.Navigation("Customer");
 
@@ -350,16 +534,22 @@ namespace Online_platform_for_vegetables.Migrations
             modelBuilder.Entity("Online_platform_for_vegetables.Model.Payment", b =>
                 {
                     b.HasOne("Online_platform_for_vegetables.Model.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerID");
+                        .WithMany("payments")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Online_platform_for_vegetables.Model.Farmer", "Farmer")
-                        .WithMany()
-                        .HasForeignKey("FarmerID");
+                        .WithMany("payments")
+                        .HasForeignKey("FarmerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Online_platform_for_vegetables.Model.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderID");
+                        .WithMany("Payments")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
 
@@ -368,28 +558,79 @@ namespace Online_platform_for_vegetables.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("Online_platform_for_vegetables.Model.VegetableStocks", b =>
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Vegetable", b =>
+                {
+                    b.HasOne("Online_platform_for_vegetables.Model.Admin", "Admin")
+                        .WithMany("Vegetables")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.VegetableStock", b =>
                 {
                     b.HasOne("Online_platform_for_vegetables.Model.Farmer", "Farmer")
-                        .WithMany()
-                        .HasForeignKey("FarmerID");
+                        .WithMany("VegetableStocks")
+                        .HasForeignKey("FarmerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Online_platform_for_vegetables.Model.Vegetables", "vegetable")
-                        .WithMany()
-                        .HasForeignKey("VegetablesID");
+                    b.HasOne("Online_platform_for_vegetables.Model.Vegetable", "vegetables")
+                        .WithMany("VegetableStocks")
+                        .HasForeignKey("VegetablesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Farmer");
 
-                    b.Navigation("vegetable");
+                    b.Navigation("vegetables");
                 });
 
-            modelBuilder.Entity("Online_platform_for_vegetables.Model.Vegetables", b =>
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Admin", b =>
                 {
-                    b.HasOne("Online_platform_for_vegetables.Model.Admin", "Updated_Admin")
-                        .WithMany()
-                        .HasForeignKey("Updated_AdminAdminID");
+                    b.Navigation("Deliveries");
 
-                    b.Navigation("Updated_Admin");
+                    b.Navigation("Vegetables");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Courier", b =>
+                {
+                    b.Navigation("Deliveries");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Customer", b =>
+                {
+                    b.Navigation("Orders");
+
+                    b.Navigation("payments");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Farmer", b =>
+                {
+                    b.Navigation("Orders");
+
+                    b.Navigation("payments");
+
+                    b.Navigation("VegetableStocks");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Order", b =>
+                {
+                    b.Navigation("Deliveries");
+
+                    b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.Vegetable", b =>
+                {
+                    b.Navigation("VegetableStocks");
+                });
+
+            modelBuilder.Entity("Online_platform_for_vegetables.Model.VegetableStock", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }
