@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\software_project\\Online_platform_for_vegetables\\Online_platform_for_vegetables.csproj": {}
+    "C:\\Users\\KISHANTHAN\\Desktop\\Software project\\Web_API_vegtable_destribution_system\\Online_platform_for_vegetables.csproj": {}
   },
   "projects": {
-    "D:\\software_project\\Online_platform_for_vegetables\\Online_platform_for_vegetables.csproj": {
+    "C:\\Users\\KISHANTHAN\\Desktop\\Software project\\Web_API_vegtable_destribution_system\\Online_platform_for_vegetables.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\software_project\\Online_platform_for_vegetables\\Online_platform_for_vegetables.csproj",
+        "projectUniqueName": "C:\\Users\\KISHANTHAN\\Desktop\\Software project\\Web_API_vegtable_destribution_system\\Online_platform_for_vegetables.csproj",
         "projectName": "Online_platform_for_vegetables",
-        "projectPath": "D:\\software_project\\Online_platform_for_vegetables\\Online_platform_for_vegetables.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "D:\\software_project\\Online_platform_for_vegetables\\obj\\",
+        "projectPath": "C:\\Users\\KISHANTHAN\\Desktop\\Software project\\Web_API_vegtable_destribution_system\\Online_platform_for_vegetables.csproj",
+        "packagesPath": "C:\\Users\\KISHANTHAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KISHANTHAN\\Desktop\\Software project\\Web_API_vegtable_destribution_system\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KISHANTHAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
